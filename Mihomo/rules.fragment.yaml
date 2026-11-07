@@ -245,15 +245,28 @@ rule-providers:
     url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Direct.txt
     path: ./ruleset/personal-Direct.txt
     interval: 86400
+  Exchanges-JP:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Exchanges-JP.txt
+    path: ./ruleset/personal-Exchanges-JP.txt
+    interval: 86400
+  Exchanges-US:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Exchanges-US.txt
+    path: ./ruleset/personal-Exchanges-US.txt
+    interval: 86400
 rules:
 - DOMAIN,localhost,DIRECT
 - DOMAIN-SUFFIX,local,DIRECT
 - DOMAIN-SUFFIX,lan,DIRECT
 - GEOSITE,private,DIRECT
 - GEOIP,private,DIRECT,no-resolve
-- DOMAIN-KEYWORD,bybit,🇯🇵日本节点
-- DOMAIN-KEYWORD,binance,🇯🇵日本节点
-- DOMAIN-KEYWORD,okx,🇺🇸美国节点
+- RULE-SET,Exchanges-JP,🇯🇵日本节点
+- RULE-SET,Exchanges-US,🇺🇸美国节点
 - RULE-SET,Direct,DIRECT
 - AND,((NETWORK,UDP),(RULE-SET,AI)),REJECT
 - RULE-SET,AI,🤖 AI（严格ISP）

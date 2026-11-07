@@ -1,0 +1,3 @@
+# Shared classical rules: no outbound names or credentials.
+DOMAIN-KEYWORD,bybit
+DOMAIN-KEYWORD,binance

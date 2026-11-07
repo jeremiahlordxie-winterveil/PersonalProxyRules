@@ -6,7 +6,7 @@ Shadowrocket 与 Clash Verge Rev / Mihomo 的共享分类规则与客户端适�
 
 - Windows 已单独完成 ISP 接入：HY2 → Webshare 和 VLESS → Webshare，两条测试出口均为同一个 ISP IP。AI 仅可选择这两条链；普通 Google 使用独立的自有 VPS 测速组。
 - 按用户最新要求，Windows当前使用的配置已移除InstaBox节点及其选择/自动组引用；保留美西HY2、VLESS、日本HY2和两条ISP链。手机分组按其最新导出单独保留。
-- 本仓库提供 35 份共享规则，以及两端引用它们的配置候选。**整套统一规则尚未切换到两端生产环境。**
+- 本仓库提供 37 份共享规则，以及两端引用它们的配置候选。**整套统一规则尚未切换到两端生产环境。**
 - 手机交易所实际节点与公网出口仍待核对；电脑现用基线没有三个专用规则，不能把新映射称为原出口的等效迁移。
 
 ## 文件
@@ -35,15 +35,16 @@ Muse、OpenRouter 沿用原有关键词匹配范围，统一存放在 `Rule/AI.t
 
 ## 交易所保护与待验收项
 
-手机三条交易所规则原文、相互顺序保留，并且优先于 AI 规则集：
+交易所按出口合并管理，币安/Bybit仍走日本自动组，OKX仍走美国自动组。三条匹配条件分别存放在两份清单中，主配置只需两条引用，并且优先于AI规则集：
 
 ```text
-DOMAIN-KEYWORD,bybit,🇯🇵日本节点
-DOMAIN-KEYWORD,binance,🇯🇵日本节点
-DOMAIN-KEYWORD,okx,🇺🇸美国节点
+RULE-SET,https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Exchanges-JP.txt,🇯🇵日本节点
+RULE-SET,https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Exchanges-US.txt,🇺🇸美国节点
 ```
 
 手机日本、美国组的原成员和 `url-test` 参数保留；它们是自动组，组名不证明固定国家或固定 IP。电脑片段需要自行建立同名地区组，并按手机实测结果明确映射。尚未验收前不要把整个片段投入交易所流量。
+
+`Rule/Exchanges-JP.txt` 内依次为 Bybit、Binance 两条关键词规则，`Rule/Exchanges-US.txt` 为 OKX 关键词规则；因此旧规则的匹配范围和日本优先于美国的冲突处理顺序保留。合并的是同一出口的规则清单，不会把三家交易所强制绑到同一个节点。
 
 手机基线已更新为用户于2026-11-07提供的 `lazy_group1.conf`：静态住宅组包含两条 ISP 线路并使用 url-test；美国地区组保留新成员、顺序与测速参数，日本组也原样保留。电脑地区组片段均使用 url-test，按手机600秒周期、100毫秒容差、5秒超时适配；目前电脑可用的是1条日本线路、4条美国线路（含两条ISP链），不会凭名称编造手机其余订阅节点。因此两端分类可共享，但节点池不完全相同，不能承诺同一瞬间选择同一出口IP。
 
