@@ -56,6 +56,18 @@ DOMAIN-KEYWORD,okx,🇺🇸美国节点
 
 手机候选原始链接：[personal.conf](https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Shadowrocket/personal.conf)。
 
+### 长期更新入口
+
+小火箭长期使用上面的 `main` 链接。配置内部的 `update-url` 已指向同一地址：
+
+```text
+https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Shadowrocket/personal.conf
+```
+
+首次添加后，在同一份配置上使用更新功能即可取得以后推送的配置，不需要每次新增导入。此前提供的固定提交版本中也已包含这个 `update-url`，如已导入可直接检查并使用其更新功能。单独修改远程规则文件时，需让客户端刷新相应规则集；配置更新与规则缓存刷新由客户端分别处理。本轮已核对仓库main地址可访问且文件内更新地址正确，尚未在用户手机点按验证。
+
+完整节点认证信息保留在本地，不放入公共仓库。电脑当前仍运行ISP接入版本，AI数据内嵌；本段长期配置更新说明适用于手机配置，不表示电脑整套共享规则已启用。
+
 ## 来源与转换限制
 
 规则数据主要来自 [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)，按原手机的远程分类和优先级生成。`HOST` 系列转换为 `DOMAIN` 系列，`IP6-CIDR` 转换为 `IP-CIDR6`，去掉 Quantumult X 的出站字段，并保留适用的 `no-resolve` 参数。AI 数据以用户提供的草案为基础修订。
