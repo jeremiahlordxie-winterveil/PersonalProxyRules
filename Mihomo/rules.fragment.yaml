@@ -1,0 +1,298 @@
+# Merge only after reviewing local group mapping and exchange exits.
+rule-providers:
+  AI:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/AI.txt
+    path: ./ruleset/personal-AI.txt
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/YouTube.txt
+    path: ./ruleset/personal-YouTube.txt
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Netflix.txt
+    path: ./ruleset/personal-Netflix.txt
+    interval: 86400
+  Disney:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Disney.txt
+    path: ./ruleset/personal-Disney.txt
+    interval: 86400
+  HBO:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/HBO.txt
+    path: ./ruleset/personal-HBO.txt
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Spotify.txt
+    path: ./ruleset/personal-Spotify.txt
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Telegram.txt
+    path: ./ruleset/personal-Telegram.txt
+    interval: 86400
+  PayPal:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/PayPal.txt
+    path: ./ruleset/personal-PayPal.txt
+    interval: 86400
+  Twitter:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Twitter.txt
+    path: ./ruleset/personal-Twitter.txt
+    interval: 86400
+  Facebook:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Facebook.txt
+    path: ./ruleset/personal-Facebook.txt
+    interval: 86400
+  Amazon:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Amazon.txt
+    path: ./ruleset/personal-Amazon.txt
+    interval: 86400
+  Sony:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Sony.txt
+    path: ./ruleset/personal-Sony.txt
+    interval: 86400
+  Nintendo:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Nintendo.txt
+    path: ./ruleset/personal-Nintendo.txt
+    interval: 86400
+  Epic:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Epic.txt
+    path: ./ruleset/personal-Epic.txt
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/SteamCN.txt
+    path: ./ruleset/personal-SteamCN.txt
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Steam.txt
+    path: ./ruleset/personal-Steam.txt
+    interval: 86400
+  Game:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Game.txt
+    path: ./ruleset/personal-Game.txt
+    interval: 86400
+  GitHub:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/GitHub.txt
+    path: ./ruleset/personal-GitHub.txt
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Microsoft.txt
+    path: ./ruleset/personal-Microsoft.txt
+    interval: 86400
+  Google:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Google.txt
+    path: ./ruleset/personal-Google.txt
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Apple.txt
+    path: ./ruleset/personal-Apple.txt
+    interval: 86400
+  BiliBili:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/BiliBili.txt
+    path: ./ruleset/personal-BiliBili.txt
+    interval: 86400
+  NetEaseMusic:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/NetEaseMusic.txt
+    path: ./ruleset/personal-NetEaseMusic.txt
+    interval: 86400
+  Baidu:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Baidu.txt
+    path: ./ruleset/personal-Baidu.txt
+    interval: 86400
+  DouBan:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/DouBan.txt
+    path: ./ruleset/personal-DouBan.txt
+    interval: 86400
+  WeChat:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/WeChat.txt
+    path: ./ruleset/personal-WeChat.txt
+    interval: 86400
+  Sina:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Sina.txt
+    path: ./ruleset/personal-Sina.txt
+    interval: 86400
+  Zhihu:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Zhihu.txt
+    path: ./ruleset/personal-Zhihu.txt
+    interval: 86400
+  XiaoHongShu:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/XiaoHongShu.txt
+    path: ./ruleset/personal-XiaoHongShu.txt
+    interval: 86400
+  DouYin:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/DouYin.txt
+    path: ./ruleset/personal-DouYin.txt
+    interval: 86400
+  TikTok:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/TikTok.txt
+    path: ./ruleset/personal-TikTok.txt
+    interval: 86400
+  Global:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Global.txt
+    path: ./ruleset/personal-Global.txt
+    interval: 86400
+  China:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/China.txt
+    path: ./ruleset/personal-China.txt
+    interval: 86400
+  Lan:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Lan.txt
+    path: ./ruleset/personal-Lan.txt
+    interval: 86400
+  Direct:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalProxyRules/main/Rule/Direct.txt
+    path: ./ruleset/personal-Direct.txt
+    interval: 86400
+rules:
+- DOMAIN,localhost,DIRECT
+- DOMAIN-SUFFIX,local,DIRECT
+- DOMAIN-SUFFIX,lan,DIRECT
+- GEOSITE,private,DIRECT
+- GEOIP,private,DIRECT,no-resolve
+- AND,((NETWORK,UDP),(DOMAIN-KEYWORD,muse)),REJECT
+- DOMAIN-KEYWORD,muse,🤖 AI（严格ISP）
+- DOMAIN-KEYWORD,bybit,🇯🇵日本节点
+- DOMAIN-KEYWORD,binance,🇯🇵日本节点
+- DOMAIN-KEYWORD,okx,🇺🇸美国节点
+- AND,((NETWORK,UDP),(DOMAIN-KEYWORD,openrouter)),REJECT
+- DOMAIN-KEYWORD,openrouter,🤖 AI（严格ISP）
+- RULE-SET,Direct,DIRECT
+- AND,((NETWORK,UDP),(RULE-SET,AI)),REJECT
+- RULE-SET,AI,🤖 AI（严格ISP）
+- RULE-SET,YouTube,🎬 国际流媒体
+- RULE-SET,Netflix,🎬 国际流媒体
+- RULE-SET,Disney,🎬 国际流媒体
+- RULE-SET,HBO,🎬 国际流媒体
+- RULE-SET,Spotify,🎬 国际流媒体
+- RULE-SET,Telegram,🚀 节点选择
+- RULE-SET,PayPal,🚀 节点选择
+- RULE-SET,Twitter,🚀 节点选择
+- RULE-SET,Facebook,🚀 节点选择
+- RULE-SET,Amazon,🚀 节点选择
+- RULE-SET,Sony,🚀 节点选择
+- RULE-SET,Nintendo,🚀 节点选择
+- RULE-SET,Epic,🚀 节点选择
+- RULE-SET,SteamCN,🚀 节点选择
+- RULE-SET,Steam,🚀 节点选择
+- RULE-SET,Game,🚀 节点选择
+- RULE-SET,GitHub,🚀 节点选择
+- RULE-SET,Microsoft,🚀 节点选择
+- RULE-SET,Google,🌐 Google（速度优先）
+- RULE-SET,Apple,🚀 节点选择
+- RULE-SET,BiliBili,📺 哔哩哔哩
+- RULE-SET,NetEaseMusic,DIRECT
+- RULE-SET,Baidu,DIRECT
+- RULE-SET,DouBan,DIRECT
+- RULE-SET,WeChat,DIRECT
+- RULE-SET,Sina,DIRECT
+- RULE-SET,Zhihu,DIRECT
+- RULE-SET,XiaoHongShu,DIRECT
+- RULE-SET,DouYin,DIRECT
+- RULE-SET,TikTok,🚀 节点选择
+- RULE-SET,Global,🚀 节点选择
+- RULE-SET,China,DIRECT
+- RULE-SET,Lan,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择
