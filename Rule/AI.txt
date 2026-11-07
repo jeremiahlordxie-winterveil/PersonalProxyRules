@@ -29,7 +29,7 @@ DOMAIN,jules.google.com
 DOMAIN,notebooklm.google.com
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,deepmind.com
-DOMAIN-SUFFIX,muse.ai
+DOMAIN-KEYWORD,muse
 DOMAIN,ai.meta.com
 DOMAIN,meta.ai
 DOMAIN-SUFFIX,grok.com
@@ -59,7 +59,7 @@ DOMAIN-SUFFIX,replit.com
 DOMAIN-SUFFIX,lovable.dev
 DOMAIN-SUFFIX,bolt.new
 DOMAIN-SUFFIX,zed.dev
-DOMAIN-SUFFIX,openrouter.ai
+DOMAIN-KEYWORD,openrouter
 DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,replicate.com
 DOMAIN-SUFFIX,fireworks.ai

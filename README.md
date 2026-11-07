@@ -20,20 +20,22 @@ Shadowrocket 与 Clash Verge Rev / Mihomo 的共享分类规则与客户端适�
 | `SOURCES.json` | 上游来源、快照哈希、各文件条目数与无法通用的规则计数 |
 | `LICENSE` | GPL-2.0；衍生自 blackmatrix7/ios_rule_script 的规则保留其授权要求 |
 
-共享指两端使用相同的分类数据。两端节点名称、策略组映射、DNS/TUN 和 UDP 拒绝措施分别适配。手机仍有本地 Muse、交易所、Notion、Kelivo 等规则；电脑片段增加了 AI UDP 显式拒绝。不能把不同客户端的语法或保护措施直接互换。
+共享指两端使用相同的分类数据。两端节点名称、策略组映射、DNS/TUN 和 UDP 拒绝措施分别适配。手机本地保留交易所、Notion、Kelivo 等规则；Muse、OpenRouter 已并入 `Rule/AI.txt`，电脑片段对整个 AI 规则集显式拒绝对应 UDP。不能把不同客户端的语法或保护措施直接互换。
 
 ## AI 与 Google
 
 AI 候选清单有 88 条，覆盖主要 AI 产品，并补入 `chat.com`、Gemini 专用 API、Microsoft Copilot 等明确遗漏。它不是对全部 AI 域名的完整证明；新产品及附属端点仍需按连接日志维护。普通 `googleapis.com` 不整体归入 AI。
 
-- 手机 AI 组只连接本地“美国静态住宅”组，该组引用本地已有 `WEBSHARE US ISP` 节点。该节点的代理通过关系需在手机核对；本仓库不创建含凭据节点，也未在真实手机验证。
+Muse、OpenRouter 沿用原有关键词匹配范围，统一存放在 `Rule/AI.txt`，客户端不再保留两条前置例外。它们统一经过 AI → 美国静态住宅 → ISP。三家交易所专用规则仍排在 AI 规则集之前；同时含交易所关键词与Muse/OpenRouter关键词的域名优先按交易所规则处理。
+
+- 手机 AI 组只连接本地“美国静态住宅”组，该组引用本地已有 `WEBSHARE US ISP` 与 `WEBSHARE-US-ISP-VLESS` 节点并自动测速。节点的代理通过关系需在手机核对；本仓库不创建含凭据节点。
 - 电脑 AI 组名为 `🤖 AI（严格ISP）`，必须仅包含真实 ISP 链路。不可加 DIRECT 或 VPS 直出备用。
 - 电脑普通 Google 映射到 `🌐 Google（速度优先）`，与 AI 拆组。
-- Webshare 链按当前已知能力只承载 TCP。Mihomo 对无 UDP 能力的节点可能继续向下匹配，故片段在 AI 关键词及规则集前显式拒绝对应 UDP；不能只依靠节点的 `udp: false`。
+- Webshare 链按当前已知能力只承载 TCP。Mihomo 对无 UDP 能力的节点可能继续向下匹配，故片段在 AI 规则集前显式拒绝对应 UDP；不能只依靠节点的 `udp: false`。
 
 ## 交易所保护与待验收项
 
-手机三条规则及其前面的 Muse 规则相对位置保留：
+手机三条交易所规则原文、相互顺序保留，并且优先于 AI 规则集：
 
 ```text
 DOMAIN-KEYWORD,bybit,🇯🇵日本节点
