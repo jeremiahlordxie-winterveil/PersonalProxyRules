@@ -5,6 +5,7 @@ Shadowrocket 与 Clash Verge Rev / Mihomo 的共享分类规则与客户端适�
 ## 当前进度
 
 - Windows 已单独完成 ISP 接入：HY2 → Webshare 和 VLESS → Webshare，两条测试出口均为同一个 ISP IP。AI 仅可选择这两条链；普通 Google 使用独立的自有 VPS 测速组。
+- 按用户最新要求，Windows当前使用的配置已移除InstaBox节点及其选择/自动组引用；保留美西HY2、VLESS、日本HY2和两条ISP链。手机分组按其最新导出单独保留。
 - 本仓库提供 35 份共享规则，以及两端引用它们的配置候选。**整套统一规则尚未切换到两端生产环境。**
 - 手机交易所实际节点与公网出口仍待核对；电脑现用基线没有三个专用规则，不能把新映射称为原出口的等效迁移。
 
