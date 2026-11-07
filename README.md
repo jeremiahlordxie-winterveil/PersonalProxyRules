@@ -14,7 +14,9 @@ Shadowrocket 与 Clash Verge Rev / Mihomo 的共享分类规则与客户端适�
 | 路径 | 用途 |
 |---|---|
 | `Rule/*.txt` | 共享 classical 文本规则；没有策略组名称、节点认证信息 |
-| `Shadowrocket/personal.conf` | 手机候选；基于原完整配置保留本地例外、组、DNS/IPv6/QUIC/UDP 设置 |
+| `Shadowrocket/personal.conf` | 手机默认配置；保留原节点池与分组，调整为加密 DNS |
+| `Shadowrocket/personal-cellular.conf` | 蜂窝候选；仅保留已确认的 VLESS 节点，AI 只走 VLESS 前置 ISP |
+| `Shadowrocket/network-and-dns.md` | 两份配置的更新、场景切换和 DNS 验收说明 |
 | `Mihomo/rules.fragment.yaml` | 电脑规则引用片段；不是完整可运行配置，不可直接替换现有订阅 |
 | `Mihomo/groups.fragment.yaml` | 使用电脑已有节点的美日自动测速组；两组均为 url-test |
 | `SOURCES.json` | 上游来源、快照哈希、各文件条目数与无法通用的规则计数 |
@@ -48,7 +50,13 @@ RULE-SET,https://raw.githubusercontent.com/jeremiahlordxie-winterveil/PersonalPr
 
 手机基线已更新为用户于2026-11-07提供的 `lazy_group1.conf`：静态住宅组包含两条 ISP 线路并使用 url-test；美国地区组保留新成员、顺序与测速参数，日本组也原样保留。电脑地区组片段均使用 url-test，按手机600秒周期、100毫秒容差、5秒超时适配；目前电脑可用的是1条日本线路、4条美国线路（含两条ISP链），不会凭名称编造手机其余订阅节点。因此两端分类可共享，但节点池不完全相同，不能承诺同一瞬间选择同一出口IP。
 
-手机配置将 AI 组设为严格 ISP、规则 URL 指向本仓库、规范已有非交易所目标组的大小写、删除无效的完整 URL 域名规则，并增加链缺失时关闭连接的设置。Muse/OpenRouter 合入 AI，交易所合并为日本/美国两份清单，地区组成员及自动测速参数保持。客户端版本支持、真实代理链、DNS/IPv6/UDP 仍需手机验收。原 DNS 的国内普通 DNS、system 回退及 Apple/iCloud 系统 DNS 例外并未在此阶段宣称修复。
+手机配置将 AI 组设为严格 ISP、规则 URL 指向本仓库、规范已有非交易所目标组的大小写、删除无效的完整 URL 域名规则，并增加链缺失时关闭连接的设置。Muse/OpenRouter 合入 AI，交易所合并为日本/美国两份清单。默认版地区组成员及自动测速参数保持；蜂窝版缩减为已确认的 VLESS 候选。两份配置均已调整 DNS，端点测试通过，客户端实际 DNS/IPv6/UDP 行为仍需手机验收。
+
+### 蜂窝 TCP 与 DNS
+
+按网络切换使用两份配置：默认版保持现有自动优选，蜂窝版 AI 仅走 `WEBSHARE-US-ISP-VLESS`，日本／美国组保留对应地区的已确认 TCP 候选；两份规则清单相同，地区组仍为 url-test。蜂窝版需首次添加一次，再通过小火箭原生场景设置蜂窝／默认配置映射。发布文件不等于手机场景已启用，VLESS 底层传输及代理通过设置也需设备核对。
+
+DNS 已移除原普通 DNS、system 备用和 Apple/iCloud 系统解析例外，改用经 VLESS 前置 ISP 的 Cloudflare DoH，以及供 DIRECT／节点引导使用的阿里 DoH。四个端点的 TLS 和真实解析测试通过，手机泄漏复测尚未完成。详见 [手机网络与 DNS 说明](Shadowrocket/network-and-dns.md)。
 
 ## 如何继续部署
 
